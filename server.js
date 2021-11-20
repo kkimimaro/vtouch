@@ -6,7 +6,7 @@ app.set("view engine", "ejs");
 const server = require("http").Server(app);
 const io = require("socket.io")(server, {
   cors: {
-    origin: '*'
+    origin: '*'``
   }
 });
 const { ExpressPeerServer } = require("peer");
