@@ -29,7 +29,7 @@ const { user, room } = Qs.parse(location.search, {
 var peer = new Peer(undefined, {
   path: "/peerjs",
   host: "/",
-  port: "339",
+  port: "443",
 });
 
 peer.on("open", (userId) => {
