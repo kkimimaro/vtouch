@@ -21,6 +21,10 @@ mongoose.connect('mongodb+srv://darmian3:Zarobotok2015@cluster0.odpkw.mongodb.ne
   console.log("Database connection ", err)
 })
 
+app.get('/', function(req,res){
+  res.render('index');
+});
+
 app.get('/main', function(req,res){
   res.render('main');
 });
