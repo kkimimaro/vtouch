@@ -39,8 +39,8 @@ peer.on("open", (userId) => {
 const connectToNewUser = (userId, stream) => {
   const call = peer.call(userId, stream);
   const video = document.createElement("video");
-  call.on("stream", (userVideoStream) => {
-    addVideoStream(video, userVideoStream);
+  call.on("stream", (myVideoStream) => {
+    addVideoStream(video, myVideoStream);
   });
 };
 
@@ -55,6 +55,13 @@ navigator.mediaDevices.getUserMedia({
 
       socket.on("user-connected", (userId) => {
         connectToNewUser(userId, stream);
+        peer.on("call", (call) => {
+          call.answer(myVideoStream);
+          const video = document.createElement("video");
+          call.on("stream", (userVideoStream) => {
+            addVideoStream(video, userVideoStream);
+          });
+        });
       });
     });
 
