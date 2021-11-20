@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="stylesheet" href="style.css" />
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+		<link rel="icon" href="logoImg.png">
+		<title>VTouch - Вход</title>
+	</head>
+	<body>
+	<div class="wrapper2">
+		<div class="join-container">
+			<header class="join-header" onclick="location.href='/'">
+				<div class="logo">
+					<img src="logoImg.png"
+						 alt="Logo"/>
+				</div>
+			</header>
+			<main class="join-main" style="font-size: 24px; font-family: 'PT Serif', serif">
+				<form action="/room">
+					<label for="room">Комната</label>
+					<div class="form-control">
+						<select class="form-select" name="room" id="room">
+							<option selected disabled>Выберите комнату</option>
+							<option value="Seirin">Seirin</option>
+							<option value="Shutoku">Shutoku</option>
+							<option value="Rakuzan">Rakuzan</option>
+							<option value="Too">Too</option>
+						</select>
+					</div>
+					<label for="user">Никнейм</label>
+					<div class="form-control">
+						<input class="form-control" type="text" name="user" id="user" placeholder="Никнейм..." required/>
+					</div>
+					<button type="submit" class="btn" style="font-family: 'PT Serif', serif; font-size: 24px">Присоединиться</button>
+				</form>
+			</main>
+		</div>
+		</div>
+		<footer>
+
+			<video autoplay muted loop id="myVideo">
+				<source src="backVideo.mp4" type="video/mp4">
+			</video>
+		</footer>
+	</body>
+</html>
