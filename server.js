@@ -25,6 +25,10 @@ app.get('/', function(req,res){
   res.render('index');
 });
 
+app.get('/about', function(req,res){
+  res.render('about');
+});
+
 app.get('/main', function(req,res){
   res.render('main');
 });
