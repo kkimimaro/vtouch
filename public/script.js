@@ -5,6 +5,27 @@ const showChat = document.querySelector("#showChat");
 const returnBtn = document.querySelector("#returnBtn");
 myVideo.muted = true;
 
+const muteButton = document.querySelector("#muteButton");
+const stopVideo = document.querySelector("#stopVideo");
+
+muteButton.addEventListener("click", () => {
+  const enabled = myVideoStream.getAudioTracks()[0].enabled;
+  if (enabled) {
+    myVideoStream.getAudioTracks()[0].enabled = false;
+  } else {
+    myVideoStream.getAudioTracks()[0].enabled = true;
+  }
+});
+
+stopVideo.addEventListener("click", () => {
+  const enabled = myVideoStream.getVideoTracks()[0].enabled;
+  if (enabled) {
+    myVideoStream.getVideoTracks()[0].enabled = false;
+  } else {
+    myVideoStream.getVideoTracks()[0].enabled = true;
+  }
+});
+
 returnBtn.addEventListener("click", () => {
   document.querySelector(".main__left").style.display = "flex";
   document.querySelector(".main__left").style.flex = "1";
@@ -127,25 +148,3 @@ socket.on('serverMessage', (message) => {
         <p style="font-size: 18px"><b style="color: rgba(101,27,255, 1); font-size: 22px">${message}</b>            ${datetime}</p>
     </div>`;
 });
-
-const muteButton = document.querySelector("#muteButton");
-const stopVideo = document.querySelector("#stopVideo");
-
-muteButton.addEventListener("click", () => {
-  const enabled = myVideoStream.getAudioTracks()[0].enabled;
-  if (enabled) {
-    myVideoStream.getAudioTracks()[0].enabled = false;
-  } else {
-    myVideoStream.getAudioTracks()[0].enabled = true;
-  }
-});
-
-stopVideo.addEventListener("click", () => {
-  const enabled = myVideoStream.getVideoTracks()[0].enabled;
-  if (enabled) {
-    myVideoStream.getVideoTracks()[0].enabled = false;
-  } else {
-    myVideoStream.getVideoTracks()[0].enabled = true;
-  }
-});
-
